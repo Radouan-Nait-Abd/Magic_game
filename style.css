@@ -46,7 +46,7 @@ main .card {
     text-align: center;
     position: absolute;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 main .buttons {
@@ -94,9 +94,23 @@ main .buttons ul li {
     border-radius: 6px;
     color: #fff;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 main .buttons button.disabled {
     cursor: no-drop;
-    opacity: 0.6;
+    opacity: 0.2;
+}
+
+main .buttons button.animation {
+    animation: animate 0.5s linear 1s infinite alternate;
+}
+
+@keyframes animate {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateXs(0px);
+    }
 }

@@ -73,12 +73,12 @@ function checker() {
     if (currentSlide == 6) {
         setTimeout(() => {
             alert(
-                `سيتم إعادة تحميل الصفحة تلقائيًا! \n\n The page will automatically reload!`
+                `The page will automatically reload! \n\n سيتم إعادة تحميل الصفحة تلقائيًا`
             );
             setTimeout(() => {
                 location.reload();
-            }, 1500);
-        }, 2000);
+            }, 1000);
+        }, 1500);
     }
 }
 
@@ -96,10 +96,19 @@ checker();
 
 let results = randomNumber / 2;
 
-randomNum.innerHTML =
-    `أضف '${randomNumber}' إلى المجموع الإجمالي` +
-    "<br />".repeat(2) +
-    `Add '${randomNumber}' to the total`;
-
 result.innerHTML =
-    `النتائج = ${results}` + "<br/>".repeat(2) + `Results = ${results}`;
+    `Results = ${results}` + "<br/>".repeat(2) + `النتائج = ${results}`;
+randomNum.innerHTML =
+    `Add '${randomNumber}' to the total` +
+    "<br />".repeat(2) +
+    `أضف '${randomNumber}' إلى المجموع الإجمالي`;
+
+if (prevBtn.classList.contains('disabled')){
+  prevBtn.classList.remove('animation')
+} else {
+  prevBtn.classList.add('animation')
+}
+
+if (nextBtn.classList.contains('disabled')) {
+  nextBtn.classList.remove('animation')
+}
