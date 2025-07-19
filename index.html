@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Magic Game</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="card">
+                    Pick a number in your mind!
+                    <br />
+                    <br />
+                    !اختار رقمًا في ذهنك
+                </div>
+                <div class="card">
+                    multiply it by 2
+                    <br />
+                    <br />
+                    اضربه في 2
+                </div>
+                <div class="card">
+                    <p id="RN"></p>
+                </div>
+                <div class="card">
+                    Then divide it by 2
+                    <br />
+                    <br />
+                    ثم قسمها على 2
+                </div>
+                <div class="card">
+                    Now subtract the number you picked at the beginning
+                    <br />
+                    <br />
+                    ناقص الرقم الذي اخترته
+                </div>
+                <div class="card" id="result"></div>
+            </div>
+            <div class="buttons">
+                <button type="button" id="prev">Prev ←</button>
+                <ul class="nums" id="nums"></ul>
+                <button type="button" id="next">Next →</button>
+            </div>
+        </main>
+        <script src="app.js"></script>
+    </body>
+</html>
