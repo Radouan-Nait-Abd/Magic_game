@@ -73,12 +73,12 @@ function checker() {
     if (currentSlide == 6) {
         setTimeout(() => {
             alert(
-                `The page will automatically reload! \n\n سيتم إعادة تحميل الصفحة تلقائيًا`
+                `سيتم إعادة تحميل الصفحة تلقائيًا! \n\n The page will automatically reload!`
             );
             setTimeout(() => {
                 location.reload();
-            }, 1000);
-        }, 1500);
+            }, 1500);
+        }, 2000);
     }
 }
 
@@ -96,9 +96,10 @@ checker();
 
 let results = randomNumber / 2;
 
-result.innerHTML =
-    `Results = ${results}` + "<br/>".repeat(2) + `النتائج = ${results}`;
 randomNum.innerHTML =
-    `Add '${randomNumber}' to the total` +
+    `أضف '${randomNumber}' إلى المجموع الإجمالي` +
     "<br />".repeat(2) +
-    `أضف '${randomNumber}' إلى المجموع الإجمالي`;
+    `Add '${randomNumber}' to the total`;
+
+result.innerHTML =
+    `النتائج = ${results}` + "<br/>".repeat(2) + `Results = ${results}`;
