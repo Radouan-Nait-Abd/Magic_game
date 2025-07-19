@@ -3,17 +3,13 @@ let randomNum = document.getElementById("RN");
 let result = document.getElementById("result");
 let nonActive = document.querySelectorAll("main .card");
 let bullets = document.getElementById("nums");
-
 let sliderImages = Array.from(document.querySelectorAll(".container div"));
-
 let slideCount = sliderImages.length;
-
 let currentSlide = 1;
-
 let slideNum = document.getElementById("slide-num");
-
 let prevBtn = document.getElementById("prev");
 let nextBtn = document.getElementById("next");
+let buttons = Array.from(document.querySelectorAll("main .buttons button"));
 
 function nextSlide() {
     if (nextBtn.classList.contains("disabled")) {
@@ -70,15 +66,26 @@ function checker() {
         nextBtn.classList.remove("disabled");
     }
 
+    function toggleBtnAnimation(btn) {
+        if (btn.classList.contains("disabled")) {
+            btn.classList.remove("animation");
+        } else {
+            btn.classList.add("animation");
+        }
+    }
+
+    toggleBtnAnimation(prevBtn);
+    toggleBtnAnimation(nextBtn);
+
     if (currentSlide == 6) {
         setTimeout(() => {
             alert(
-                `The page will automatically reload! \n\n سيتم إعادة تحميل الصفحة تلقائيًا`
+                `سيتم إعادة تحميل الصفحة تلقائيًا! \n\n The page will automatically reload!`
             );
             setTimeout(() => {
                 location.reload();
-            }, 1000);
-        }, 1500);
+            }, 1500);
+        }, 2000);
     }
 }
 
@@ -96,19 +103,10 @@ checker();
 
 let results = randomNumber / 2;
 
-result.innerHTML =
-    `Results = ${results}` + "<br/>".repeat(2) + `النتائج = ${results}`;
 randomNum.innerHTML =
-    `Add '${randomNumber}' to the total` +
+    `أضف '${randomNumber}' إلى المجموع الإجمالي` +
     "<br />".repeat(2) +
-    `أضف '${randomNumber}' إلى المجموع الإجمالي`;
+    `Add '${randomNumber}' to the total`;
 
-if (prevBtn.classList.contains('disabled')){
-  prevBtn.classList.remove('animation')
-} else {
-  prevBtn.classList.add('animation')
-}
-
-if (nextBtn.classList.contains('disabled')) {
-  nextBtn.classList.remove('animation')
-}
+result.innerHTML =
+    `النتائج = ${results}` + "<br/>".repeat(2) + `Results = ${results}`;
