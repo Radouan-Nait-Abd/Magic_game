@@ -109,6 +109,7 @@ main .buttons button.animation {
 @keyframes animate {
     from {
         transform: translateX(-10px);
+        transom-origin: center;
     }
     to {
         transform: translateXs(0px);
